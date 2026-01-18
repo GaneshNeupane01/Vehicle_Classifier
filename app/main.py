@@ -1,4 +1,6 @@
 import io
+from pathlib import Path
+
 import torch
 import timm
 from PIL import Image
@@ -12,7 +14,9 @@ app = FastAPI(title="Vehicle Type Classifier API")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using device:", device)
 
-MODEL_PATH = "vehicle_classifier_best.pth"
+# Resolve model path relative to project root: <repo_root>/models/vehicle_classifier_best.pth
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODEL_PATH = BASE_DIR / "models" / "vehicle_classifier_best.pth"
 model = None
 class_names = None
 
@@ -39,7 +43,7 @@ transform = transforms.Compose([
 def load_model():
     global model, class_names
 
-    checkpoint = torch.load(MODEL_PATH, map_location=device)
+    checkpoint = torch.load(str(MODEL_PATH), map_location=device)
     class_names = checkpoint["class_names"]
     num_classes = len(class_names)
 

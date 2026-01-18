@@ -4,3 +4,5 @@ timm
 pillow
 python-multipart
 numpy<2
+roboflow
+tqdm
