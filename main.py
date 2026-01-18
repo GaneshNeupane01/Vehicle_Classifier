@@ -6,9 +6,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
 from torchvision import transforms
 
-# =========================
-# App Init
-# =========================
+
 app = FastAPI(title="Vehicle Type Classifier API")
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -19,17 +17,13 @@ model = None
 class_names = None
 
 
-# =========================
-# Response Schema
-# =========================
+
 class PredictionResponse(BaseModel):
     label: str
     confidence: float
 
 
-# =========================
-# Image Transform
-# =========================
+
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
@@ -40,9 +34,7 @@ transform = transforms.Compose([
 ])
 
 
-# =========================
-# Load Model on Startup
-# =========================
+
 @app.on_event("startup")
 def load_model():
     global model, class_names
@@ -64,9 +56,7 @@ def load_model():
     print("✅ Model loaded successfully")
 
 
-# =========================
-# Prediction Endpoint
-# =========================
+
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(file: UploadFile = File(...)):
 
@@ -99,9 +89,7 @@ async def predict(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# =========================
 # Health Check
-# =========================
 @app.get("/")
 def root():
     return {"status": "Vehicle Classifier API is running 🚗🏍️"}
