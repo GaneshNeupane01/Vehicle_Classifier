@@ -1,4 +1,5 @@
 # Vehicle Type Classifier
+## 🟢 Project is live on HuggingFace-->FastAPI https://botinfinity-vehicle-classifier.hf.space/docs
 
 This project is a small, practical vehicle type classifier. The model is a ConvNeXt-Tiny fine-tuned on a Roboflow vehicle dataset, and you can use it in three ways:
 
