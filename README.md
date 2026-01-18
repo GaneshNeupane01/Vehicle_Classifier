@@ -238,3 +238,9 @@ Loss: 0.0045 | Acc: 87.78% | F1: 87.67%
 The inference scripts (`app/main.py` and `scripts/predict_local.py`) load the model on `cuda` if available, otherwise CPU.
 
 ---
+
+## 👤 Author
+**Ganesh Neupane**
+Computer Engineering | AI / ML
+- GitHub: [@GaneshNeupane01](https://github.com/GaneshNeupane01)
+- Detail: [@portfolio](https://ganesh-neupane.com.np)
