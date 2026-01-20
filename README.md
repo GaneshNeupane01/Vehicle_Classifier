@@ -37,8 +37,8 @@ The goal is to be easy to run and easy to understand.
 ---
 ## Clone the project
 ```bash
-   git clone https://github.com/GaneshNeupane01/Fashion-Recommendation-System.git
-   cd Fashion-Recommendation-System
+   git clone https://github.com/GaneshNeupane01/Vehicle_Classifier.git
+   cd Vehicle_Classifier
 ```
 
 ## Quickstart (Docker)
