@@ -35,6 +35,11 @@ The goal is to be easy to run and easy to understand.
 - `Dockerfile` – Docker image definition for serving the API.
 
 ---
+## Clone the project
+```bash
+   git clone https://github.com/GaneshNeupane01/Fashion-Recommendation-System.git
+   cd Fashion-Recommendation-System
+```
 
 ## Quickstart (Docker)
 
