@@ -10,7 +10,7 @@ This project is a small, practical vehicle type classifier. The model is a ConvN
 The goal is to be easy to run and easy to understand.
 
 ---
-
+![Demo](assets/UI_Glance_VehicleClassifier.png)
 ## Features
 
 - ConvNeXt-Tiny backbone fine-tuned for vehicle type classification.
